@@ -1,0 +1,12 @@
+{
+  "name": "upacp/upacp-sdk",
+  "type": "library",
+  "license": "MIT",
+  "require": {},
+  "autoload": {
+    "files": [
+      "acp_service.php"
+    ]
+  },
+  "minimum-stability": "dev"
+}
