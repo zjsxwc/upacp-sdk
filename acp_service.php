@@ -1,8 +1,6 @@
 <?php
 namespace com\unionpay\acp\sdk;
 
-date_default_timezone_set('Asia/Shanghai');
-header ( 'Content-type:text/html;charset=utf-8' );
 
 include_once 'log.class.php';
 include_once 'SDKConfig.php';
