@@ -10,6 +10,8 @@ class SDKConfig {
     private static $_configFilePath = null;
 
     public static function initSDKConfig($configFilePath) {
+        date_default_timezone_set('Asia/Shanghai');
+        header ( 'Content-type: text/html; charset=UTF-8' );
         self::$_configFilePath = $configFilePath;
     }
 
