@@ -13,6 +13,18 @@ class SDKConfig {
         date_default_timezone_set('Asia/Shanghai');
         header ( 'Content-type: text/html; charset=UTF-8' );
         self::$_configFilePath = $configFilePath;
+        self::fixSignPubKeyCert($_POST);
+    }
+
+    private static function fixSignPubKeyCert(&$post) { 
+        if (empty($post["signPubKeyCert"])) { 
+            return; 
+        } 
+        $signPubKeyCert = $post["signPubKeyCert"]; 
+        $validNewLinePosition = strpos($signPubKeyCert, "\r\n"); 
+        if ($validNewLinePosition === false) { 
+            $post["signPubKeyCert"] = str_replace("\n", "\r\n", $signPubKeyCert); 
+        } 
     }
 
     public static function getSDKConfig(){
